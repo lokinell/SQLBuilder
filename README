@@ -1,1 +1,1 @@
-This file was created by IntelliJ IDEA 11.1.4 for binding GitHub repository
+参考apache commons-lang中Builder的思想，采用java编程语言实现了基本的SQLBuilder功能。
