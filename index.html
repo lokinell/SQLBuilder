@@ -42,7 +42,9 @@
 他可以帮助我们美化自己的程序，减少java程序在操作SQL的过程中，出现的许多的错误，</p>
 
 <p>以前我们都以这种方式来编写SQL程序：</p>
-<code>String sql = "select *" + "from Employee" + "where name like 'Fred%'";</code>
+<pre><code>
+String sql = "select *" + "from Employee" + "where name like 'Fred%'";
+</code></pre>
 <p>你是否也经常为单引号和双引号的等等等等的各种问题发愁？</p>
 
 <p>现在有了SQLBuilder之后，我们可以使用这种方式来编写我们的程序：</p>
