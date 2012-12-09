@@ -29,7 +29,7 @@ public class InsertBuilder extends AbstractSqlBuilder implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder("Insert INTO ").append(tableName).append(" (");
+        StringBuilder stringBuilder = new StringBuilder("INSERT INTO ").append(tableName).append(" (");
         appendList(stringBuilder, columns, "", ", ");
         stringBuilder.append(") VALUES (");
         appendList(stringBuilder, values, "", ", ");
