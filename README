@@ -1,1 +1,29 @@
 参考apache commons-lang中Builder的思想，采用java编程语言实现了基本的SQLBuilder功能。
+
+--------------------------------------------------------------------------------------
+您可以在你的程序中这样使用它们：
+new SelectBuilder()
+.column("name")
+.column("age")
+.from("Employee")
+.where("dept = 'engineering'")
+.where("salary > 100000")
+.toString();
+----------------------------------------------------------------------------------------
+
+以下的功能还不完善，还需要我业余抽时间维护跟新以下，暂不推荐您使用它们。
+----------------------------------------------------------------------------------------
+PreparedStatementCreator psc =
+    new ParameterizedPreparedStatementCreator()
+    .setSql("update Employee set name = :name where id = :id")
+    .setParameter("name", "Bob")
+    .setParameter("id", 42);
+
+new JdbcTemplate(dataSource).update(psc)
+----------------------------------------------------------------------------------------
+PreparedStatementCreator psc =
+    new UpdateCreator("Employee")
+    .setValue("name", "Bob")
+    .whereEquals("id", 42);
+
+new JdbcTemplate(dataSource).update(psc);
